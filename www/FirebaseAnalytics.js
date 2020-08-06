@@ -35,6 +35,11 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "setEnabled", [enabled]);
         });
     },
+    setSessionTimeoutDuration: function(milliseconds) {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "setSessionTimeoutDuration", [milliseconds]);
+        });
+    },
     setCurrentScreen: function(name) {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "setCurrentScreen", [name]);

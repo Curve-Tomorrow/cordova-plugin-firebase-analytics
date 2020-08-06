@@ -80,6 +80,12 @@ Sets whether analytics collection is enabled for this app on this device.
 cordova.plugins.firebase.analytics.setEnabled(false);
 ```
 
+### setSessionTimeoutDuration(_milliseconds_)
+Sets the duration of inactivity that terminates the current session.
+```js
+cordova.plugins.firebase.analytics.setSessionTimeoutDuration(600000);
+```
+
 ### resetAnalyticsData()
 Clears all analytics data for this instance from the device and resets the app instance ID
 ```js
