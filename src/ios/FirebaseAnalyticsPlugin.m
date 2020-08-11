@@ -51,6 +51,15 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)setSessionTimeoutDuration:(CDVInvokedUrlCommand *)command {
+    NSTimeInterval milliseconds = [[command.arguments objectAtIndex:0] doubleValue];
+
+    [FIRAnalytics setSessionTimeoutInterval:milliseconds];
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)setCurrentScreen:(CDVInvokedUrlCommand *)command {
     NSString* name = [command.arguments objectAtIndex:0];
 

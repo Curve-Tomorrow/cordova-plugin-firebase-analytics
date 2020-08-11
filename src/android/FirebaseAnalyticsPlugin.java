@@ -85,6 +85,13 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
         callbackContext.success();
     }
 
+    @CordovaMethod
+    private void setSessionTimeoutDuration(long milliseconds, CallbackContext callbackContext) {
+        this.firebaseAnalytics.setSessionTimeoutDuration(milliseconds);
+
+        callbackContext.success();
+    }
+
     @CordovaMethod(ExecutionThread.UI)
     private void setCurrentScreen(String screenName, CallbackContext callbackContext) {
         firebaseAnalytics.setCurrentScreen(
